@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base document</title>
+</head>
+<body>
+    Put navbar here
+    {% include 'navbar.html' %}
+    <!-- 'content' is defined here, can be named anything, multiple blocks possible -->
+    {% block content %}
+    replace me
+    {% endblock %}
+</body>
+</html>
