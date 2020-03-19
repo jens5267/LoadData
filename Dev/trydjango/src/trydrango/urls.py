@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import contact_view, home_view
-from products.views import product_detail_view, product_create_view
+from products.views import product_detail_view#, product_create_view, load_detail_view
+from loads.views import load_detail_view, load_create_view
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('contacts', contact_view, name='contacts'),
     path('product/', product_detail_view, name='product'),
-    path('create/', product_create_view, name='product'),
+    # path('create/', product_create_view, name='product'),
+    path('create/', load_create_view, name='load'),
+    path('load/', load_detail_view, name='load'),
     path('admin/', admin.site.urls),
 ]

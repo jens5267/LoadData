@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if object.first_input %}
+<h1>{{ object.first_input }}</h1>
+{% else %}
+<h1>First input coming soon</h1>
+{% endif %}
+{% endblock %}

@@ -20,3 +20,10 @@ def product_create_view(request):
         'form': form
     }
     return render(request, 'products/product_create.html', context)
+
+# def load_detail_view(request):
+#     # obj = Load.objects.get(id=2)
+#     context = {
+#         # 'object': obj
+#     }
+#     return render(request, 'products/load_detail.html', context)
