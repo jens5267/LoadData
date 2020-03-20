@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 from .models import Load
@@ -6,10 +7,13 @@ from .forms import LoadForm
 
 # Create your views here.
 def load_detail_view(request):
-    obj = Load.objects.get(id=1)
-    context = {
-        'object': obj
-    }
+    try:
+        obj = Load.objects.get(id=1)
+        context = {
+            'object': obj
+        }
+    except ObjectDoesNotExist:
+        context = {}
     return render(request, 'loads/load_detail.html', context)
 
 def load_create_view(request):
